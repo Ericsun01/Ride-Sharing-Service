@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/search/" method="post"> {% csrf_token %}
+    <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" name="destination" id="destination" size="30">
+    </div>
+    <div class="form-group">
+        <label for="number">Passengers</label>
+        <input type="text" name="number" id="number" size="30">
+    </div>
+    <div class="form-group">
+        <label for="arrival">Arrival</label>
+        <input type="time" name="arrival" id="arrival" size="30">
+    </div>
+    <input type="submit" value="Search" class="btn btn-primary">
+</form>
+{% endblock %}

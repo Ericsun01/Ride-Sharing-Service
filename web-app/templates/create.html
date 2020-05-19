@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/submit/"  method="post"> {% csrf_token %}
+    {{form.as_p}}
+    input any number for User!
+    <br>
+    <input type="submit" value="Save" class="btn btn-primary" />
+</form>
+{% endblock %}

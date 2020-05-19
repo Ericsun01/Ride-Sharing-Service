@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>My Rides</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">status</th>
+      <th scope="col">destination</th>
+      <th scope="col">arrival</th>
+      <th scope="col">number</th>
+      <th scope="col">shared</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for object in objects %}
+    <tr>
+      <td>{{object.status}}</td>
+      <td>{{object.destination}}</td>
+      <td>{{object.arrival}}</td>
+      <td>{{object.number}}</td>
+      <td>{{object.shared}}</td>
+      {% if object.status == "open" %}
+      <td><a href="/edit/{{object.ride_id}}" class="btn btn-sm btn-primary">Edit</a></td>
+      {% endif %}
+      {% if object.status == "confirmed" %}
+      <td><a href="/detail/{{object.ride_id}}" class="btn btn-sm btn-primary">Detail</a></td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div style="z-index: 1; position: relative; text-align: center;">
+  <a href="/create/" class="btn btn-lg btn-primary">Request Ride</a>
+  <a href="/search/" class="btn btn-lg btn-primary">Search Ride</a>
+  <a href="/driver/" class="btn btn-lg btn-primary">I'm Driver</a>
+</div>
+{% endblock %}

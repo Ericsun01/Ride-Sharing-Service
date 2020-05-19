@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search Results</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">status</th>
+      <th scope="col">destination</th>
+      <th scope="col">arrival</th>
+      <th scope="col">number</th>
+      <th scope="col">shared</th>
+      <th scope="col">join</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for object in objects %}
+    <tr>
+      <td>{{object.status}}</td>
+      <td>{{object.destination}}</td>
+      <td>{{object.arrival}}</td>
+      <td>{{object.number}}</td>
+      <td>{{object.shared}}</td>
+      <td><a href="/join/{{object.ride_id}}" class="btn btn-sm btn-primary">Join</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div style="z-index: 1; position: relative; text-align: center;">
+  <a href="/orders/" class="btn btn-lg btn-primary">Go Back</a>
+</div>
+{% endblock %}

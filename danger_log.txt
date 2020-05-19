@@ -1,0 +1,27 @@
+1. We finish the function of signup and login, and find that if
+ users signup several times with the same information, our signup 
+function will just accept it without prompt. Also when someone
+try to sign up using a name begin with spaces, there is no warning
+. However, login system will not accept name with pure spaces.
+
+2. We finish the function that users could login as driver with their 
+vehicles' information, and are able to see which rides are confirmed 
+or opened. However, if a user doesn't want to be a driver anymore,
+he could not eliminate his driver information unless he signup with 
+a new user name. Also, once a user is identified as driver, he is not 
+allowed to request a ride without logout and login again.
+
+3. We finsih the function that users are able to search for a specific
+requirement. However, if user left one of the blank empty or type in
+information of a non-exist ride and click search, the webpage will 
+breakdown without warning prompt.
+
+4. We find that user could request a ride with time earlier than present.
+
+5. We find that if user A request for a ride that allows sharing, later user
+B choose to share with A and click sharing, A will not receive any prompt.  
+
+6. We put the entire project into docker and changed to postgresql in the end, but postgresql kept reporting errors. See we used sqlite3 instead.
+
+
+

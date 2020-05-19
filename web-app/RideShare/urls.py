@@ -1,0 +1,39 @@
+"""RideShare URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from rides.views import home, rides, create, submit, edit, search, register, signup, driver, update, orders, confirm, opens, complete, detail, join
+
+urlpatterns = [
+    path('rides/', rides, name='rides'),
+    path('', home, name='home'),
+    path('admin/', admin.site.urls),
+    path('create/', create, name='create'),
+    path('submit/', submit, name='submit'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("accounts/register/", register, name="register"),
+    path("accounts/submit/", signup, name="signup"),
+    path("edit/<int:ride_id>", edit, name="edit"),
+    path("search/", search, name="search"),
+    path("driver/", driver, name="driver"),
+    path("update/<int:user>", update, name="update"),
+    path('orders/', orders, name='orders'),
+    path('confirm/<int:ride_id>', confirm, name='confirm'),
+    path('opens/', opens, name='opens'),
+    path('complete/<int:ride_id>', complete, name='complete'),
+    path('detail/<int:ride_id>', detail, name='detail'),
+    path('join/<int:ride_id>', join, name='join'),
+]

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Ride Detail</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">status</th>
+      <th scope="col">destination</th>
+      <th scope="col">arrival</th>
+      <th scope="col">number</th>
+      <th scope="col">shared</th>
+      <th scope="col">license plate number</th>
+      <th scope="col">vehicle type</th>
+      <th scope="col">maximum number of passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ride.status}}</td>
+      <td>{{ride.destination}}</td>
+      <td>{{ride.arrival}}</td>
+      <td>{{ride.number}}</td>
+      <td>{{ride.shared}}</td>
+      <td>{{driver.plate}}</td>
+      <td>{{driver.type}}</td>
+      <td>{{driver.passengers}}</td>
+    </tr>
+  </tbody>
+</table>
+<div style="z-index: 1; position: relative; text-align: center;">
+  <a href="/orders/" class="btn btn-lg btn-primary">Go Back</a>
+</div>
+{% endblock %}
